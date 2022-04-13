@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<form action="/NhanVien_61133801/Index" enctype="multipart/form-data" method="post">
+    <table>
+        <h4>THONG TIN NHAN VIEN</h4>
+        <div>
+            Ma so nhan vien: <br /><input type="text" name="EmpID"> <br />
+            Ho ten:    <br /><input type="text" name="Name"> <br />
+            Ngay sinh:    <br /><input type="text" name="BirthOfDate"> <br />
+            Email:    <br /><input type="text" name="Email"> <br />
+            Mat Khau:    <br /><input type="text" name="Password"> <br />
+            Don vi:    <br /><input type="text" name="Department"> <br />
+            <div style="padding-top:10">Anh dai dien: <input type="file" style="height:30px" name="Avatar" accept="image/*" required></div>
+    </table>
+    </div>
+    <div><input type="submit" value="Dang ky" style="margin-left: 110;" /></div>
+
+</form>
+
