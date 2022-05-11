@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KT0720_MVC_61133801Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MaSV" />
+    </Key>
+    <Property Name="MaSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoSV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgaySinh" Type="date" Nullable="false" />
+    <Property Name="GioiTinh" Type="bit" Nullable="false" />
+    <Property Name="AnhSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__SINHVIEN__MaLop__276EDEB3">
+    <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KT0720_MVC_61133801ModelStoreContainer">
+    <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SINHVIEN__MaLop__276EDEB3" Association="Self.FK__SINHVIEN__MaLop__276EDEB3">
+      <End Role="LOP" EntitySet="LOP" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

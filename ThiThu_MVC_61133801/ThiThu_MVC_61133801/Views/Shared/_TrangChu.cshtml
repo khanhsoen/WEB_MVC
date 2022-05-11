@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+    <link href="~/Content/StyleAdmin.css" rel="stylesheet" />
+</head>
+<body style="margin-top:0px;">
+    <div id="banner" style="top:0px;position:absolute;">HỆ THỐNG QUẢN LÝ SINH VIÊN</div>
+    <div id="menu" style="margin-top:10px;">
+        <div>
+            @Html.ActionLink("GIỚI THIỆU", "Index", "GioiThieu") &nbsp;|&nbsp;
+            @Html.ActionLink("THÊM MỚI", "Create", "SinhVien0720_61133801")&nbsp;|&nbsp;
+            @Html.ActionLink("DANH SÁCH", "Index", "SinhVien0720_61133801") &nbsp;|&nbsp;
+            @Html.ActionLink("TÌM KIẾM", "TimKiem", "SinhVien0720_61133801")&nbsp;|&nbsp;
+            <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
+        </div>
+        <div>
+            <p align="right">  @ViewBag.NguoiDung</p>
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        Copyright &copy; @DateTime.Now.Year
+    </div>
+</body>
+</html>

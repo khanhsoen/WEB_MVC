@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+}
+<h4>ĐẶC TẢ PHẦN MỀM</h4>
+<div style="margin-left:20px;font-size:16px;">
+    <p>
+        Để quản lý thông tin sinh viên trong hệ thống, người ta xây dựng website theo các yêu cầu gợi ý sau:
+    </p>
+    <ol type="a">
+        <li>
+            Xây dựng cơ sở dữ liệu trên SQL Server có tên là KT0720_MãSV (Mã sinh viên của người tạo), gồm 2 bảng (Table) như sau:
+            <br />
+            LỚP (<b><u>Mã Lớp</u></b>, Tên Lớp)
+            <br />
+            SINHVIEN (
+            <b><u>Mã SV</u></b>, Họ SV, Tên SV, Giới tính,  Ngày sinh, Ảnh SV, Địa chỉ,
+            <uu style="border-bottom: 1px dashed">Mã Lớp</uu>)
+        </li>
+
+
+        <li>
+            Xây dựng Models có tên Model_MãSV (Mã sinh viên của người tạo) dùng ADO.NET Entity Data Model..
+        </li>
+
+        <li>
+            Xây dựng Controllers có tên SinhVien0720_MãSVController (Mã sinh viên của người tạo) dùng để thực hiện các chức năng: Giới thiệu, hiện thị danh sách, thêm mới và xem chi tiết..
+        </li>
+
+        <li> Tìm kiếm thông tin liên quan đến nhân viên: Mã sinh viên, họ tên.</li>
+    </ol>
+</div>
+

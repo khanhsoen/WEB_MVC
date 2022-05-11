@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ThiThu_MVC_61133801.Models.SINHVIEN>
+
+@{
+    ViewBag.Title = "TimKiem";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+    string gtinh = "";
+    int i = 0;
+}
+
+<h2>TÌM KIẾM SINH VIÊN</h2>
+@using (Html.BeginForm("TimKiem", "SinhVien0720_61133801", FormMethod.Get, new { @class = "form-inline" }))
+{
+<div class="form-group">
+    <label>Mã sinh viên: </label>
+    <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên MSV cần tìm">
+    <input type="submit" class="btn btn-danger" value="Tìm mã sinh viên">
+</div>
+    <hr />
+}
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Mã sinh viên
+        </th>
+        <th>
+            Họ sinh viên
+        </th>
+        <th>
+            Tên sinh viên
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            Ảnh sinh viên
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Lớp
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{i++;}
+                @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @{if (item.GioiTinh == true)
+                    { gtinh = "Nam"; }
+                    else
+                    { gtinh = "Nữ"; }
+                }
+                @gtinh
+
+            </td>
+            <td>
+                <img src="~/Images/@item.AnhSV" width="50" height="50" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOP.MaLop)
+            </td>
+        </tr>
+    }
+
+</table>
