@@ -1,0 +1,62 @@
+﻿
+@model BaiTap6_61133801.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "Details";
+    string gtinh = "";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+}
+<table border="1" cellpadding="0" cellspacing="0" style="font-size:14px; margin-left:20px">
+    <tr>
+        <td>
+            <table cellpadding="2" cellspacing="10">
+                <caption><b>THÔNG TIN CHI TIẾT</b></caption>
+                <tr>
+                    <td rowspan="8"><img src="/Images/@Html.DisplayFor(model => model.AnhNV)" width="100" height="100" /></td>
+                    <td>Mã nhân viên:</td>
+                    <td>@Html.DisplayFor(model => model.MaNV)</td>
+                </tr>
+                <tr>
+                    <td>Họ nhân viên:</td>
+                    <td>@Html.DisplayFor(model => model.HoNV)</td>
+                </tr>
+                <tr>
+                    <td>Tên nhân viên:</td>
+                    <td>@Html.DisplayFor(model => model.TenNV)</td>
+                </tr>
+                <tr>
+                    <td>Giới tính:</td>
+                    <td>
+                        @{if (Model.GioiTinh == true)
+                            { gtinh = "Nam"; }
+                            else
+                            { gtinh = "Nữ"; }
+                        }
+                        @gtinh
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td>@Html.DisplayFor(model => model.NgaySinh)</td>
+                </tr>
+                <tr>
+                    <td>Lương:</td>
+                    <td>@Html.DisplayFor(model => model.Luong)</td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td>@Html.DisplayFor(model => model.DiaChi)</td>
+                </tr>
+                <tr>
+                    <td>Phòng ban:</td>
+                    <td>@Html.DisplayFor(model => model.PHONGBAN.TenPB)</td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+<p style="margin-left:50px;">
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MaNV }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

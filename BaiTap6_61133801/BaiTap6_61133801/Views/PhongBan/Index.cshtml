@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BaiTap6_61133801.Models.PHONGBAN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+    int i = 0;
+}
+<h2>DANH SÁCH PHÒNG BAN</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Mã phòng ban
+        </th>
+
+        <th>
+            Tên phòng ban
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{i++;}
+                @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaPB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenPB)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaPB }) |
+                @Html.ActionLink("Xem chi tiết", "Details", new { id = item.MaPB }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaPB })
+            </td>
+        </tr>
+    }
+
+</table>
