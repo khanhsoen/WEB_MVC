@@ -1,0 +1,76 @@
+﻿@model BaiTap5_61133801.Models.MailInfo
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+}
+
+@{ Html.BeginForm();}
+
+<table style="border:1px solid">
+    <tr>
+        <th colspan="6">
+            <h2>CHỨC NĂNG GỬI EMAIL</h2>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div>Gửi từ email</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.From)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Mật khẩu</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Gửi đến email</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.To)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Tiêu đề</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Subject)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Nội dung</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Body)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <div style="text-align:center">
+                <input type="submit" value="Gửi Email" />
+            </div>
+        </td>
+    </tr>
+</table>
+@{ Html.EndForm();}
+
+
+

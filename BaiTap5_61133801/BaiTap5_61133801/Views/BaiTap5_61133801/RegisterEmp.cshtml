@@ -1,0 +1,96 @@
+﻿
+@model BaiTap5_61133801.Models.EmpModel
+@{
+    ViewBag.Title = "RegisterEmp";
+    Layout = "~/Views/Shared/_TrangChu.cshtml";
+}
+
+
+@{ Html.BeginForm("RegisterEmp", "BaiTap5_61133801", FormMethod.Post, new { enctype = "multipart/form-data" });}
+
+<table style="border:1px solid">
+    <tr>
+        <th colspan="2">
+            <h2>THÔNG TIN SINH VIÊN ĐÃ ĐĂNG KÝ</h2>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div>Mã nhân viên</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.EmpID)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Họ và tên</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Name)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Ngày Sinh</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.BirthOfDate)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Email</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Email)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Mật khẩu</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Đơn vị</div>
+        </td>
+        <td>
+            <div>
+                @Html.EditorFor(model => model.Department)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Ảnh đại diện</div>
+        </td>
+        <td>
+            <div>
+                <input type="file" name="Avatar" value="Chọn tệp" accept="*image" required />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div style="text-align:center">
+                <input type="submit" value="Đăng ký" />
+            </div>
+        </td>
+    </tr>
+</table>
+@{ Html.EndForm();}
+
