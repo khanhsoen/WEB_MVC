@@ -12,6 +12,5 @@ namespace BaiTap4_61133801.Models
         public string To { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
-
     }
 }
