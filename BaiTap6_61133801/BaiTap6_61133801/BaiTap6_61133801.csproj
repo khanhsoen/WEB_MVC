@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -9,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{88E20F29-44DB-4E29-B8EC-1832F011E752}</ProjectGuid>
+    <ProjectGuid>{C9C8994F-F993-4ADC-B152-B375B2CFA6AA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44351</IISExpressSSLPort>
+    <IISExpressSSLPort>44318</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -47,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -129,79 +128,69 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\NhanVien_61133801Controller.cs" />
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelQLNV_61133801.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelQLNV_61133801.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelQLNV_61133801.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelQLNV_61133801.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelQLNV_61133801.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelQLNV_61133801.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\NHANVIEN.cs">
-      <DependentUpon>ModelQLNV_61133801.tt</DependentUpon>
+      <DependentUpon>NhanVien_61133801.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhanVien_61133801.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhanVien_61133801.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhanVien_61133801.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhanVien_61133801.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhanVien_61133801.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhanVien_61133801.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PHONGBAN.cs">
-      <DependentUpon>ModelQLNV_61133801.tt</DependentUpon>
+      <DependentUpon>NhanVien_61133801.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>NhanVien_61133801.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\GioiThieuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\StyleAdmin.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Coffee1.jpg" />
-    <Content Include="Images\delete.png" />
-    <Content Include="Images\details.png" />
-    <Content Include="Images\DHNT.png" />
-    <Content Include="Images\edit.png" />
-    <Content Include="Images\employee.png" />
-    <Content Include="Images\employee1.png" />
-    <Content Include="Images\Page1.JPG" />
-    <Content Include="Images\Page2.jpg" />
-    <Content Include="Images\SP1.jpg" />
-    <Content Include="Images\SP8.jpg" />
-    <Content Include="Images\YenSao.png" />
-    <Content Include="Models\ModelQLNV_61133801.Context.tt">
+    <Content Include="Models\NhanVien_61133801.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelQLNV_61133801.Context.cs</LastGenOutput>
-      <DependentUpon>ModelQLNV_61133801.edmx</DependentUpon>
+      <LastGenOutput>NhanVien_61133801.Context.cs</LastGenOutput>
+      <DependentUpon>NhanVien_61133801.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\ModelQLNV_61133801.tt">
+    <Content Include="Models\NhanVien_61133801.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelQLNV_61133801.edmx</DependentUpon>
-      <LastGenOutput>ModelQLNV_61133801.cs</LastGenOutput>
+      <DependentUpon>NhanVien_61133801.edmx</DependentUpon>
+      <LastGenOutput>NhanVien_61133801.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ModelQLNV_61133801.edmx">
+    <EntityDeploy Include="Models\NhanVien_61133801.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelQLNV_61133801.Designer.cs</LastGenOutput>
+      <LastGenOutput>NhanVien_61133801.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelQLNV_61133801.edmx.diagram">
-      <DependentUpon>ModelQLNV_61133801.edmx</DependentUpon>
+    <Content Include="Models\NhanVien_61133801.edmx.diagram">
+      <DependentUpon>NhanVien_61133801.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.6.2.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -227,19 +216,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TrangChu.cshtml" />
-    <Content Include="Views\NhanVien\Index.cshtml" />
-    <Content Include="Views\PhongBan\Index.cshtml" />
+    <Content Include="Views\NhanVien_61133801\Index.cshtml" />
+    <Content Include="Views\NhanVien_61133801\Details.cshtml" />
+    <Content Include="Views\NhanVien_61133801\Create.cshtml" />
+    <Content Include="Views\NhanVien_61133801\Edit.cshtml" />
+    <Content Include="Views\NhanVien_61133801\Delete.cshtml" />
+    <Content Include="Views\NhanVien_61133801\TimKiem.cshtml" />
     <Content Include="Views\GioiThieu\Index.cshtml" />
-    <Content Include="Views\NhanVien\TimKiem.cshtml" />
-    <Content Include="Views\NhanVien\TimKiemNC.cshtml" />
-    <Content Include="Views\NhanVien\Delete.cshtml" />
-    <Content Include="Views\NhanVien\Details.cshtml" />
-    <Content Include="Views\PhongBan\Create.cshtml" />
+    <Content Include="Views\PhongBan\Index.cshtml" />
     <Content Include="Views\PhongBan\Details.cshtml" />
+    <Content Include="Views\PhongBan\Create.cshtml" />
     <Content Include="Views\PhongBan\Edit.cshtml" />
     <Content Include="Views\PhongBan\Delete.cshtml" />
-    <Content Include="Views\NhanVien\Edit.cshtml" />
-    <Content Include="Views\NhanVien\Create.cshtml" />
+    <Content Include="Views\NhanVien_61133801\TimKiemNC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,9 +265,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50562</DevelopmentServerPort>
+          <DevelopmentServerPort>56696</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44351/</IISUrl>
+          <IISUrl>https://localhost:44318/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -293,10 +282,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

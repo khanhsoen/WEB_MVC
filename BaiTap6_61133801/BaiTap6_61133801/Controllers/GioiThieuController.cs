@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BaiTap6_61133801.Controllers
+namespace BaiTap6_61133801.Views
 {
     public class GioiThieuController : Controller
     {

@@ -32,7 +32,7 @@ namespace BaiTap6_61133801.Controllers
             }
             return View(phongBan);
         }
-  
+
         public ActionResult Create()
         {
             return View();
@@ -58,7 +58,7 @@ namespace BaiTap6_61133801.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           PHONGBAN phongBan = db.PHONGBAN.Find(id);
+            PHONGBAN phongBan = db.PHONGBAN.Find(id);
             if (phongBan == null)
             {
                 return HttpNotFound();
@@ -112,6 +112,5 @@ namespace BaiTap6_61133801.Controllers
             }
             base.Dispose(disposing);
         }
-
     }
 }
