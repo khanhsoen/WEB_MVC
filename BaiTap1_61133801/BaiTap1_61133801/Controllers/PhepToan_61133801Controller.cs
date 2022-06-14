@@ -30,6 +30,10 @@ namespace BaiTap1_61133801.Controllers
             }
             return View();
         }
-
+        // GET: PhepToan_61133801
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
