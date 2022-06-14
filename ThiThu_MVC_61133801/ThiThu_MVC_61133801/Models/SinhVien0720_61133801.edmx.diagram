@@ -4,9 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="11ef7d01f2df4e3791554ea06c1f1e79" Name="Diagram1">
+      <Diagram DiagramId="b52e6a72e969472f80ad46327c37e6a4" Name="Diagram1">
         <EntityTypeShape EntityType="KT0720_MVC_61133801Model.LOP" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KT0720_MVC_61133801Model.SINHVIEN" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KT0720_MVC_61133801Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="KT0720_MVC_61133801Model.FK__SINHVIEN__MaLop__276EDEB3" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

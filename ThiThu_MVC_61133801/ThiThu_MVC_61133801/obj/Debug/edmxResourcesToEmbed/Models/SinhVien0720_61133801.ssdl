@@ -20,6 +20,16 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <Association Name="FK__SINHVIEN__MaLop__276EDEB3">
     <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
     <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
@@ -35,6 +45,7 @@
   <EntityContainer Name="KT0720_MVC_61133801ModelStoreContainer">
     <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__SINHVIEN__MaLop__276EDEB3" Association="Self.FK__SINHVIEN__MaLop__276EDEB3">
       <End Role="LOP" EntitySet="LOP" />
       <End Role="SINHVIEN" EntitySet="SINHVIEN" />

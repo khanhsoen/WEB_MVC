@@ -22,6 +22,16 @@
     <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="LOP" Relationship="Self.FK__SINHVIEN__MaLop__276EDEB3" FromRole="SINHVIEN" ToRole="LOP" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <Association Name="FK__SINHVIEN__MaLop__276EDEB3">
     <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
     <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
@@ -37,6 +47,7 @@
   <EntityContainer Name="KT0720_MVC_61133801Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="LOP" EntityType="Self.LOP" />
     <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <AssociationSet Name="FK__SINHVIEN__MaLop__276EDEB3" Association="Self.FK__SINHVIEN__MaLop__276EDEB3">
       <End Role="LOP" EntitySet="LOP" />
       <End Role="SINHVIEN" EntitySet="SINHVIEN" />

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\HK6\WEB MVC\ThiThu_MVC_61133801\ThiThu_MVC_61133801\Models\SinhVien0720_61133801.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\HK6\Backup\Web_MVC\ThiThu_MVC_61133801\ThiThu_MVC_61133801\Models\SinhVien0720_61133801.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

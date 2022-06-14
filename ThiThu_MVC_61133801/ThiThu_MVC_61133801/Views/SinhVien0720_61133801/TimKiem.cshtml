@@ -10,11 +10,11 @@
 <h2>TÌM KIẾM SINH VIÊN</h2>
 @using (Html.BeginForm("TimKiem", "SinhVien0720_61133801", FormMethod.Get, new { @class = "form-inline" }))
 {
-<div class="form-group">
-    <label>Mã sinh viên: </label>
-    <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên MSV cần tìm">
-    <input type="submit" class="btn btn-danger" value="Tìm mã sinh viên">
-</div>
+    <div class="form-group">
+        <label>Mã sinh viên: </label>
+        <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên MSV cần tìm">
+        <input type="submit" class="btn btn-danger" value="Tìm mã sinh viên">
+    </div>
     <hr />
 }
 <table class="table">

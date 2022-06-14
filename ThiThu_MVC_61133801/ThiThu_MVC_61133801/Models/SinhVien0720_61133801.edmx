@@ -25,6 +25,16 @@
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK__SINHVIEN__MaLop__276EDEB3">
           <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
           <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
@@ -40,6 +50,7 @@
         <EntityContainer Name="KT0720_MVC_61133801ModelStoreContainer">
           <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__SINHVIEN__MaLop__276EDEB3" Association="Self.FK__SINHVIEN__MaLop__276EDEB3">
             <End Role="LOP" EntitySet="LOP" />
             <End Role="SINHVIEN" EntitySet="SINHVIEN" />
@@ -72,6 +83,16 @@
           <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="LOP" Relationship="Self.FK__SINHVIEN__MaLop__276EDEB3" FromRole="SINHVIEN" ToRole="LOP" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK__SINHVIEN__MaLop__276EDEB3">
           <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
           <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
@@ -87,6 +108,7 @@
         <EntityContainer Name="KT0720_MVC_61133801Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="LOP" EntityType="Self.LOP" />
           <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK__SINHVIEN__MaLop__276EDEB3" Association="Self.FK__SINHVIEN__MaLop__276EDEB3">
             <End Role="LOP" EntitySet="LOP" />
             <End Role="SINHVIEN" EntitySet="SINHVIEN" />
@@ -117,6 +139,17 @@
                 <ScalarProperty Name="AnhSV" ColumnName="AnhSV" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KT0720_MVC_61133801Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

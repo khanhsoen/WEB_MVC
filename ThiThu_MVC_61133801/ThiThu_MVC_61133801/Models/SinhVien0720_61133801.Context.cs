@@ -27,5 +27,6 @@ namespace ThiThu_MVC_61133801.Models
     
         public virtual DbSet<LOP> LOP { get; set; }
         public virtual DbSet<SINHVIEN> SINHVIEN { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
