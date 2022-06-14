@@ -20,6 +20,5 @@ namespace BaiTap2_61133801.Controllers
             ViewBag.Marks = field["Marks"];
             return View(ViewBag);
         }
-
     }
 }
