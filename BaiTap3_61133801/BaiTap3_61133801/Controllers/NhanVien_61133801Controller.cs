@@ -23,9 +23,8 @@ namespace BaiTap3_61133801.Controllers
             var path = Server.MapPath("/Images/" + postedFileName);
             Avatar.SaveAs(path);
             string fSave = Server.MapPath("/emp.txt");
-            string[] emInfo =
-           {emp.EmpID, emp.Name, emp.BirthOfDate.ToShortDateString(),
- emp.Email,emp.Password,emp.Department, postedFileName};
+            string[] emInfo = {emp.EmpID, emp.Name, emp.BirthOfDate.ToShortDateString(),
+                emp.Email,emp.Password,emp.Department, postedFileName};
             //Lưu các thông ti vào tập tin emp.txt
             System.IO.File.WriteAllLines(fSave, emInfo);
             //Ghi nhận các thông tin đăng ký để hiện thị trên View Confirm
